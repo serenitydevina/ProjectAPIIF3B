@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Prodi extends Model
+class Mahasiswa extends Model
 {
     use HasFactory,HasUuids;
 
-    protected $fillable =["nama","fakultas_id"];
+    protected $fillable =["npm","nama","tanggal_lahir","tempat_lahir","alamat","prodi_id"];
 
-    public function fakultas(){
-        return $this->belongsTo(Fakultas::class,'fakultas_id');
-    }
+    public function prodis(){
+        return $this->belongsTo(Prodi::class,'prodi_id'); 
+}
 }
