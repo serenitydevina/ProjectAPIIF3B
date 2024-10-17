@@ -11,8 +11,8 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::middleware('auth:sanctum')->get('/fakultas', [FakultasController::class, 'index']);
-// Route::get('/fakultas',[FakultasController::class,'index']);
+// Route::middleware('auth:sanctum')->get('/fakultas', [FakultasController::class, 'index']);
+Route::get('/fakultas',[FakultasController::class,'index']);
 Route::get('/prodi',[ProdiController::class,'index']);
 Route::post('/fakultas',[FakultasController::class,'store']);
 Route::post('/prodi',[ProdiController::class,'store']);
